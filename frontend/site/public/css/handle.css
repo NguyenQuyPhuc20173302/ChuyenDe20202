@@ -1,0 +1,37 @@
+.next-race h1 {
+    font-weight: normal;
+  }
+  
+  .next-race  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  .next-race li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  .next-race ul {
+      text-align: center;
+      color: yellow;
+  }
+.col-md-8 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main .col-sm-6 {
+  text-align: center;
+}
+.row .col-sm-8 {
+  text-align: center;
+  margin: 100px 0px;
+}
+.grid_12{
+  text-align: center;
+}
+.row {
+  margin-bottom: 50px;
+}
