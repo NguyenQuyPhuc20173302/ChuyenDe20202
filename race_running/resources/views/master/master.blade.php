@@ -3,7 +3,6 @@
 	<head>
 		<title></title>
 		<meta charset="utf-8">
-		<base href="{{ asset('/') }}">
 		<meta name="format-detection" content="telephone=no" />
 		<link rel="icon" href="images/favicon.ico">
 		<link rel="shortcut icon" href="images/favicon.ico" />
@@ -12,9 +11,8 @@
 		<link rel="stylesheet" href="css/style4.css" />
 		<link rel="stylesheet" href="css/camera.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/handle.css">
 		<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,7 +21,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-migrate-1.2.1.js"></script>
 		<script src="js/script.js"></script>
@@ -77,7 +75,6 @@
 		<script src="js/jquery.countdown.js"></script>
 		<script src="js/cd_config.js"></script>
 		<script src="js/modernizr.custom.69142.js"></script>
-		<script src="js/handle.js"></script>
 		<script type="text/javascript">
 			Modernizr.load({
 				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
