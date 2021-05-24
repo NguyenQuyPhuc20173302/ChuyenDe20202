@@ -78,10 +78,16 @@ class FrontEndController extends BaseController
         return redirect('/contact');
     }
     function getHome(){
-        return view('home');
+        $time = new DateTime();
+        $now = $time->format('Y-m-d H:i:s');
+        $nextRaceTime1 = DB::table("race")->whereDate('time', '>', $now)->orderBy('time', 'ASC')->first();
+        $nextRaceTime = $nextRaceTime1->time;
+        $incompletedRace = DB::table("race")->whereDate('time', '>', $now)->take(2)->get();
+        return view('home', ['nextRaceTime' => $nextRaceTime, 'incompletedRace' => $incompletedRace]);
     }
 
     function getAbout(){
+        //TO-DO: add about
         return view('about');
     }
 
@@ -90,8 +96,13 @@ class FrontEndController extends BaseController
     }
 
     function getRace(){
-        $results = DB::select('select * from race');
-        return view('race' , ['results' => $results]);
+        // $results = DB::select('select * from race');
+        // return view('race' , ['results' => $results]);
+        $time = new DateTime();
+        $now = $time->format('Y-m-d H:i:s');
+        $completedRace = DB::table("race")->whereDate('time', '<', $now)->orderBy('time', 'ASC')->paginate(5);
+        $incompletedRace = DB::table("race")->whereDate('time', '>', $now)->orderBy('time', 'ASC')->paginate(5);
+        return view('race' , ['completedRace' => $completedRace, 'incompletedRace' => $incompletedRace]);
     }
 
     function getMember(){
@@ -99,7 +110,13 @@ class FrontEndController extends BaseController
     }
 
     function getJoin(){
-        return view('join');
+        $races = DB::table("race")->get();
+        if (Cookie::get('loginSuccess') != false){
+            return view('join', ["races" => $races]);
+        } else{
+            return redirect('/login');
+        }
+        // return view('join');
     }
 
     function postJoin(Request $request){
