@@ -87,7 +87,6 @@ class FrontEndController extends BaseController
     }
 
     function getAbout(){
-        //TO-DO: add about
         return view('about');
     }
 
