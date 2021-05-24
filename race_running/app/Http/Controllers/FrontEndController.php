@@ -124,8 +124,9 @@ class FrontEndController extends BaseController
         $phone = $request->get('phone');
         $address = $request->get('address');
         $race_id = $request->get('race_id');
+        $member_id = Cookie::get('member_id')[1];
         DB::table('member_race')->insert(
-            ['member_id' => 1, 'race_id' => $race_id, 'run_time' => '0', 'rank' => 2]
+            ['member_id' => $member_id, 'race_id' => $race_id, 'run_time' => null, 'rank' => null]
         );
         Session::flash('success', 'Đăng Ký thành công');
         return redirect('/race');
