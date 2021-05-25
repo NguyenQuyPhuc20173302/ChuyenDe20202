@@ -35,12 +35,12 @@ class BackEndController extends BaseController
     }
 
     function getRace(){
-        $races = DB::table("race")->orderBy("time", "DESC")->paginate(5);
+        $races = DB::table("race")->orderBy("time", "DESC")->paginate(6);
         return view('backend.listRace', ["races"=>$races]);
     }
 
     function getTrack(){
-        $tracks = DB::table("track")->paginate(5);
+        $tracks = DB::table("track")->paginate(6);
         return view('backend.listTrack', ["tracks"=>$tracks]);
     }
 
@@ -80,6 +80,8 @@ class BackEndController extends BaseController
         $track = DB::table("track")->where("track_id", $id)->first();
         return view('backend.editTrack', ['track' => $track]);
     }
+    
+
 
     function postEditTrack(Request $request, $id){
         $name = $request->get('name');
@@ -102,7 +104,10 @@ class BackEndController extends BaseController
         Session::flash('success', 'Xóa đường đua thành công');
         return redirect('admin/get-track');
     }
-
+    function new_track($id){
+        $track = DB::table("track")->where("track_id", $id)->first();
+        return view('backend.editTrack', ['track' => $track]);
+    }
     function getMember(){
         $members = DB::table('member_race')
             ->join('member', 'member_race.member_id', '=', 'member.member_id')
