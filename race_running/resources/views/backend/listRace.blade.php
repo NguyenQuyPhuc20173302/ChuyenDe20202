@@ -15,7 +15,6 @@
         <th scope="col">Thời gian diễn ra</th>
         <th scope="col">Người chiến thắng</th>
         <th scope="col">Thao tác</th>
-        <th scope="col">Thao tác</th>
         </tr>
     </thead>
     <tbody>

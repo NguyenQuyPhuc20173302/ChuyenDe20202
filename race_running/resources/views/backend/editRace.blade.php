@@ -29,5 +29,10 @@
       <input type="text" class="form-control" id="winner" name="winner" placeholder="{{ $race->winner }}">
    </div>
    <button type="submit" class="btn btn-danger">Submit</button>
+   <div class="form-group">
+      <label for="winner">Các người tham gia khác:</label>
+      <input type="text" class="form-control" id="winner" name="winner" placeholder="{{ $race->member }}">
+   </div>
+   <button type="submit" class="btn btn-danger">Submit</button>
 </form>
 @endsection
