@@ -24,8 +24,10 @@
         <td>{{ $race->name }}</td>
         <td>{{ $race->prize }}</td>
         <td>{{ $race->time }}</td>
+
         <td>{{ $race->winner }}</td>
         <td><button class="btn btn-primary"> <a href="{{ url('admin/edit-race/'.$race->race_id) }}">Sửa</a> </button></td>
+        <td>{{ $race->member }}</td>
         <td><button class="btn btn-danger"><a href="{{ url('admin/delete-race/'.$race->race_id) }}">Xóa</a></button></td>
         </tr>
         @endforeach
